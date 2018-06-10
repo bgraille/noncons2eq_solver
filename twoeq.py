@@ -70,9 +70,9 @@ def nc_num_MW(S):
     
     grhoeee = np.ediff1d(S.sol_glob[:-1,1])
     rhoeeeR, rhoeeeL = S.P.peR/(S.P.gamma-1), S.P.peL/(S.P.gamma-1)
-    if self.P.scheme_conv == "UW":
+    if S.P.scheme_conv == "UW":
         seuil = .35*abs(rhoeeeR-rhoeeeL)
-    elif self.P.scheme_conv == "LF":
+    elif S.P.scheme_conv == "LF":
         seuil = .17*abs(rhoeeeR-rhoeeeL)
     else:
         seuil = 0
