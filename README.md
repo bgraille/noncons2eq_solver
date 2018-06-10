@@ -14,32 +14,32 @@ The json files are used to store the parameters of the simulation with the follo
 
 ```
 {
-  "version":"1.0",
-  "prefix":"results/",
-  "peraff": 0.1,
-  "Lx":     10.0,
-  "N":      2000,
-  "t0":     0.0,
-  "tf":     1.0,
-  "CFL":    0.1,
-  "gamma":  1.6666666666666667,
-  "diffD":  0.1,
-  "diffL":  0.001,
-  "onde":   3,
-  "rhoeL":  "None",
-  "rhohL":  "None",
-  "peL":    "None",
-  "pL":     1.5,
-  "vhL":    "None",
-  "rhoeR":  0.01,
-  "rhohR":  1.0,
-  "peR":    0.1,
-  "pR":     1.0,
-  "vhR":    0.2,
-  "diff_substeps": "True",
-  "splitting":     "True",
-  "scheme_conv":   "LF",
-  "scheme_nc":     "df",
-  "liste_plot": ["rhoe", "pe", "Te"]
+  "version":"1.0",                   ### version of the domcument
+  "prefix":"results/",               ### where the results have to be store (pictures)
+  "Lx":     10.0,                    ### length of the domain in space
+  "N":      2000,                    ### number of points in space
+  "t0":     0.0,                     ### initial time
+  "tf":     1.0,                     ### final time
+  "peraff": 0.1,                     ### time laps between plots
+  "gamma":  1.6666666666666667,      ### value of the adiabatic coefficient gamma = 5/3
+  "diffD":  0.1,                     ### value of the electron diffusion coefficient
+  "diffL":  0.001,                   ### value of the electron thermal conductivity
+  "onde":   3,                       ### type of the wave
+  "rhoeL":  "None",                  ### value of the electron mass (left)
+  "rhohL":  "None",                  ### value of the heavy particle mass (left)
+  "peL":    "None",                  ### value of the electron pressure (left)
+  "pL":     1.5,                     ### value of the total pressure (left)
+  "vhL":    "None",                  ### value of the hydrodynamic velocity (left)
+  "rhoeR":  0.01,                    ### value of the electron mass (right)
+  "rhohR":  1.0,                     ### value of the heavy particle mass (right)
+  "peR":    0.1,                     ### value of the electron pressure (right)
+  "pR":     1.0,                     ### value of the total pressure (right)
+  "vhR":    0.2,                     ### value of the hydrodynamic velocity (right)
+  "splitting":     "True",           ### use operator splitting
+  "diff_substeps": "True",           ### use time substeps for the diffusive part (only with splitting)
+  "scheme_conv":   "LF",             ### choice of the convective scheme (LF: Lax-Friedrichs, UW: Upwind)
+  "scheme_nc":     "df",             ### choice of the diffusive scheme (df: classical finite differences, MW: our scheme)
+  "CFL":    0.1,                     ### link between time and space step (the scale depends of the splitting)
+  "liste_plot": ["rhoe", "pe", "Te"] ### list of the outputs
 }
 ```
